@@ -1,31 +1,100 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div>
+      <b-navbar toggleable="lg" type="dark" variant="primary">
+        <b-navbar-brand to="/">Logfolio</b-navbar-brand>
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <!--            <router-link to="/">Home</router-link>-->
+            <!--            <router-link to="/about">About</router-link>-->
+            <b-nav-item to="/projects">Projects</b-nav-item>
+            <b-nav-item to="/projects">About Me</b-nav-item>
+          </b-navbar-nav>
+
+
+          <b-navbar-nav class="ml-auto">
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template slot="button-content"><em>User</em></template>
+              <b-dropdown-item to="/profile" v-if="loggedIn">Profile</b-dropdown-item>
+              <b-dropdown-item to="/login" v-if="!loggedIn">Log In</b-dropdown-item>
+              <b-dropdown-item v-else @click="logOut">Log Out</b-dropdown-item>
+            </b-nav-item-dropdown>
+          </b-navbar-nav>
+
+        </b-collapse>
+      </b-navbar>
     </div>
     <router-view/>
+    <div class="text-center center-block footer fixed-bottom">
+      <a href="https://www.linkedin.com/in/bartosz-kruba-044ba6171/"><i id="social-fb" class="social fab fa-linkedin m-3"></i></a>
+      <a href="#"><i id="social-tw" class=" social fas fa-envelope-square m-3"></i></a>
+      <a href="https://github.com/bartoszkruba"><i  id="social-gp" class="social fab fa-github-square m-3"></i></a>
+    </div>
   </div>
+
+
 </template>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  #nav {
+    padding: 30px;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  #nav a {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  #nav a.router-link-exact-active {
+    color: #42b983;
+  }
+
+  .footer {
+    border-top: 1px solid black;
+  }
+
+  .social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+  }
+
+  .social {
+    font-size: 400%;
+    -webkit-transform: scale(0.8);
+    /* Browser Variations: */
+
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+  }
+
+  /*
+      Multicoloured Hover Variations
+  */
+
+  #social-fb:hover {
+    color: #4875B4;
+  }
+
+  #social-tw:hover {
+    color: #C63D2D;
+  }
+
+  #social-gp:hover {
+    color: #211f1f;
+  }
+
 </style>

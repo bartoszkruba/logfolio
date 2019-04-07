@@ -8,7 +8,7 @@
           <b-navbar-nav>
             <!--            <router-link to="/">Home</router-link>-->
             <!--            <router-link to="/about">About</router-link>-->
-            <b-nav-item to="/projects">Projects</b-nav-item>
+            <b-nav-item to="/projects">My Projects</b-nav-item>
             <b-nav-item to="/projects">About Me</b-nav-item>
           </b-navbar-nav>
 
@@ -28,14 +28,28 @@
     </div>
     <router-view/>
     <div class="text-center center-block footer fixed-bottom">
-      <a href="https://www.linkedin.com/in/bartosz-kruba-044ba6171/"><i id="social-fb" class="social fab fa-linkedin m-3"></i></a>
-      <a href="#"><i id="social-tw" class=" social fas fa-envelope-square m-3"></i></a>
-      <a href="https://github.com/bartoszkruba"><i  id="social-gp" class="social fab fa-github-square m-3"></i></a>
+      <a href="https://www.linkedin.com/in/bartosz-kruba-044ba6171/"><i id="social-li" class="social fab fa-linkedin m-3"></i></a>
+      <a href="#"><i id="social-em" class=" social fas fa-envelope-square m-3"></i></a>
+      <a href="https://github.com/bartoszkruba"><i  id="social-gh" class="social fab fa-github-square m-3"></i></a>
     </div>
   </div>
-
-
 </template>
+
+<script>
+  export default {
+    computed: {
+      loggedIn() {
+        return this.$store.state.loggedIn;
+      }
+    },
+    methods: {
+      logOut() {
+        this.$store.commit('setLoggedIn', false);
+        this.$router.push('/')
+      }
+    }
+  }
+</script>
 
 <style>
   #app {
@@ -60,7 +74,8 @@
   }
 
   .footer {
-    border-top: 1px solid black;
+    background-color: #375a7f;
+    /*border-top: 1px solid #adb5bd;*/
   }
 
   .social:hover {
@@ -70,6 +85,7 @@
   }
 
   .social {
+    color: #adb5bd;
     font-size: 400%;
     -webkit-transform: scale(0.8);
     /* Browser Variations: */
@@ -85,16 +101,16 @@
       Multicoloured Hover Variations
   */
 
-  #social-fb:hover {
-    color: #4875B4;
+  #social-li:hover {
+    color: #fff;
   }
 
-  #social-tw:hover {
-    color: #C63D2D;
+  #social-em:hover {
+    color: #fff;
   }
 
-  #social-gp:hover {
-    color: #211f1f;
+  #social-gh:hover {
+    color: #FFF;
   }
 
 </style>

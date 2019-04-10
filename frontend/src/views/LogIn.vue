@@ -35,7 +35,7 @@
       logIn() {
         this.$store.commit('setLoggedIn', true);
         this.$store.commit('setProfileName', 'Bartosz Kruba');
-        this.$router.push('profile');
+        this.$router.push('updateprofile');
       }
     }
   }

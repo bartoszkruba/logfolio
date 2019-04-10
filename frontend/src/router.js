@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import LogIn from './views/LogIn'
+import UpdateProfile from './views/UpdateProfile'
 
 Vue.use(Router);
 
@@ -18,6 +19,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: LogIn
+    },
+    {
+      path: '/updateprofile',
+      name: 'update profile',
+      component: UpdateProfile
     },
     {
       path: '/about',

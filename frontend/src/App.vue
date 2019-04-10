@@ -1,13 +1,11 @@
 <template>
-  <div id="app">
+  <div id="app" class="d-flex flex-column justify-content-between" style="min-height: 100vh">
     <div>
       <b-navbar toggleable="lg" type="dark" variant="primary">
         <b-navbar-brand to="/">Logfolio</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <!--            <router-link to="/">Home</router-link>-->
-            <!--            <router-link to="/about">About</router-link>-->
             <b-nav-item to="/projects">My Projects</b-nav-item>
             <b-nav-item to="/projects">About Me</b-nav-item>
           </b-navbar-nav>
@@ -15,9 +13,8 @@
 
           <b-navbar-nav class="ml-auto">
             <b-nav-item-dropdown right>
-              <!-- Using 'button-content' slot -->
               <template slot="button-content"><em>User</em></template>
-              <b-dropdown-item to="/profile" v-if="loggedIn">Profile</b-dropdown-item>
+              <b-dropdown-item to="/updateprofile" v-if="loggedIn">Profile</b-dropdown-item>
               <b-dropdown-item to="/login" v-if="!loggedIn">Log In</b-dropdown-item>
               <b-dropdown-item v-else @click="logOut">Log Out</b-dropdown-item>
             </b-nav-item-dropdown>
@@ -27,19 +24,32 @@
       </b-navbar>
     </div>
     <router-view/>
-    <div class="text-center center-block footer fixed-bottom">
-      <a href="https://www.linkedin.com/in/bartosz-kruba-044ba6171/"><i id="social-li" class="social fab fa-linkedin m-3"></i></a>
-      <a href="#"><i id="social-em" class=" social fas fa-envelope-square m-3"></i></a>
-      <a href="https://github.com/bartoszkruba"><i  id="social-gh" class="social fab fa-github-square m-3"></i></a>
+    <div class="text-center center-block footer ">
+      <a :href="linkedin"><i id="social-li"
+                             class="social fab fa-linkedin m-3"></i></a>
+      <a :href="contactEmail"><i id="social-em" class=" social fas fa-envelope-square m-3"></i></a>
+      <a :href="github"><i id="social-gh" class="social fab fa-github-square m-3"></i></a>
     </div>
   </div>
 </template>
 
 <script>
   export default {
+    created() {
+      // get profile info form backend
+    },
     computed: {
       loggedIn() {
         return this.$store.state.loggedIn;
+      },
+      linkedin() {
+        return this.$store.state.profile.linkedin;
+      },
+      github() {
+        return this.$store.state.profile.github;
+      },
+      contactEmail() {
+        return 'mailto:' + this.$store.state.profile.contactEmail;
       }
     },
     methods: {

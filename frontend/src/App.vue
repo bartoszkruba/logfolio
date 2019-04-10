@@ -13,8 +13,8 @@
 
           <b-navbar-nav class="ml-auto">
             <b-nav-item-dropdown right>
-              <template slot="button-content"><em>User</em></template>
-              <b-dropdown-item to="/updateprofile" v-if="loggedIn">Profile</b-dropdown-item>
+              <template slot="button-content"><em>Admin</em></template>
+              <b-dropdown-item to="/updateprofile" v-if="loggedIn">Edit Profile</b-dropdown-item>
               <b-dropdown-item to="/login" v-if="!loggedIn">Log In</b-dropdown-item>
               <b-dropdown-item v-else @click="logOut">Log Out</b-dropdown-item>
             </b-nav-item-dropdown>

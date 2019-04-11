@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import profileService from "./services/profileService";
 
 Vue.use(Vuex);
 
@@ -23,5 +24,11 @@ export default new Vuex.Store({
       state.loggedIn = value;
     },
   },
-  actions: {}
+  actions: {
+    // eslint-disable-next-line
+    async getProfileById(id) {
+      const response = await profileService.getById(1);
+      this.commit("setProfile", response.data);
+    }
+  }
 })

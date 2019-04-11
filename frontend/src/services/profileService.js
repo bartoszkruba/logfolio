@@ -1,7 +1,7 @@
 import Api from './Api'
 
 export default {
-  getProfile(id) {
+  getById(id) {
     return Api().get(`api/profile/${id}`)
   }
 }

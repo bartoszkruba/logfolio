@@ -34,12 +34,10 @@
 </template>
 
 <script>
-  import profileService from "./services/profileService";
 
   export default {
-    async created() {
-      let profile = await profileService.getProfile(1);
-      this.$store.state.profile = profile.data;
+    created() {
+      this.$store.dispatch("getProfileById", 1);
     },
     computed: {
       loggedIn() {

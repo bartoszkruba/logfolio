@@ -28,4 +28,8 @@ public class ProfileService {
       var result = profileRepostiory.findById(id);
       return result.isPresent() ? result.get() : null;
    }
+
+   public Profile saveProfile(Profile profile) {
+      return profileRepostiory.save(profile);
+   }
 }

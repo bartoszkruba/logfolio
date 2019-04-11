@@ -26,8 +26,12 @@ export default new Vuex.Store({
   },
   actions: {
     // eslint-disable-next-line
-    async getProfileById(id) {
+    async getProfileById(state, id) {
       const response = await profileService.getById(1);
+      this.commit("setProfile", response.data);
+    },
+    async saveProfile(state, profile) {
+      const response = await profileService.save(profile);
       this.commit("setProfile", response.data);
     }
   }

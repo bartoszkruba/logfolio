@@ -111,7 +111,8 @@
     },
     methods: {
       updateProfile() {
-        this.$store.commit("setProfile", {
+        this.$store.dispatch("saveProfile", {
+          id: 1,
           profilePicture: this.updatedProfilePicture,
           profileName: this.updatedName,
           contactEmail: this.updatedContactEmail,

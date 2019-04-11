@@ -89,4 +89,19 @@ public class Profile {
    public String getProfileDescription() {
       return profileDescription;
    }
+
+   @Override
+   public String toString() {
+      return "Profile{" +
+              "id=" + id +
+              ", profileName='" + profileName + '\'' +
+              ", contactEmail='" + contactEmail + '\'' +
+              ", linkedin='" + linkedin + '\'' +
+              ", github='" + github + '\'' +
+              ", profilePicture='" + profilePicture + '\'' +
+              ", profileDescription='" + profileDescription + '\'' +
+              ", email='" + email + '\'' +
+              ", password='" + password + '\'' +
+              '}';
+   }
 }

@@ -9,7 +9,7 @@ public class Profile {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
 
-   private String name;
+   private String profileName;
    private String contactEmail;
    private String linkedin;
    private String github;
@@ -30,8 +30,8 @@ public class Profile {
       this.id = id;
    }
 
-   public void setName(String name) {
-      this.name = name;
+   public void setProfileName(String profileName) {
+      this.profileName = profileName;
    }
 
    public void setContactEmail(String contactEmail) {
@@ -66,8 +66,8 @@ public class Profile {
       return id;
    }
 
-   public String getName() {
-      return name;
+   public String getProfileName() {
+      return profileName;
    }
 
    public String getContactEmail() {

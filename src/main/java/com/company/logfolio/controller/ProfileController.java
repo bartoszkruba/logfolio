@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController()
+@RestController
 @RequestMapping("/api/profile")
 public class ProfileController {
 
@@ -24,7 +24,7 @@ public class ProfileController {
       this.profileService = profileService;
    }
 
-   @GetMapping({"","/"})
+   @GetMapping({"", "/"})
    public List<Profile> getAllProfiles() {
       return profileService.getAllProfiles();
    }

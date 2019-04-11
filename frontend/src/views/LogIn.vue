@@ -7,7 +7,7 @@
           <form>
             <div class="form-group">
               <label>Your email</label>
-              <input name="" class="form-control" placeholder="Email" type="email">
+              <input profileName="" class="form-control" placeholder="Email" type="email">
             </div> <!-- form-group// -->
             <div class="form-group">
               <label>Your password</label>
@@ -30,7 +30,7 @@
 
 <script>
   export default {
-    name: "LogIn",
+    profileName: "LogIn",
     methods: {
       logIn() {
         this.$store.commit('setLoggedIn', true);

@@ -42,7 +42,7 @@
                 label-cols-sm="3"
                 label="Name:"
                 label-align-sm="right">
-              <b-form-input :value="name" @change="updateName"/>
+              <b-form-input :value="profileName" @change="updateName"/>
             </b-form-group>
 
             <h5 class="text-left">Profile Description:</h5>
@@ -66,7 +66,7 @@
 
 <script>
   export default {
-    name: "UpdateProfile",
+    profileName: "UpdateProfile",
     data() {
       return {
         updatedName: "",
@@ -78,7 +78,7 @@
       }
     },
     computed: {
-      name() {
+      profileName() {
         // eslint-disable-next-line
         this.updatedName = this.$store.state.profile.profileName;
         return this.$store.state.profile.profileName;

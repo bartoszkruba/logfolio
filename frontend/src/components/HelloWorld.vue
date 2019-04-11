@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  profileName: 'HelloWorld',
   props: {
     msg: String
   }

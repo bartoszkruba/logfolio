@@ -34,9 +34,12 @@
 </template>
 
 <script>
+  import profileService from "./services/profileService";
+
   export default {
-    created() {
-      // get profile info form backend
+    async created() {
+      let profile = await profileService.getProfile(1);
+      this.$store.state.profile = profile.data;
     },
     computed: {
       loggedIn() {

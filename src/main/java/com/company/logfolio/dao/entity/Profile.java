@@ -13,6 +13,7 @@ public class Profile {
    private String contactEmail;
    private String linkedin;
    private String github;
+   private String phoneNumber;
 
    @Column(columnDefinition = "BLOB")
    private String profilePicture;
@@ -88,6 +89,14 @@ public class Profile {
 
    public String getProfileDescription() {
       return profileDescription;
+   }
+
+   public String getPhoneNumber() {
+      return phoneNumber;
+   }
+
+   public void setPhoneNumber(String phoneNumber) {
+      this.phoneNumber = phoneNumber;
    }
 
    @Override

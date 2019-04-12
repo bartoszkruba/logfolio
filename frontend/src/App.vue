@@ -7,7 +7,7 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item to="/projects">My Projects</b-nav-item>
-            <b-nav-item to="/projects">About Me</b-nav-item>
+            <b-nav-item to="/aboutme">About Me</b-nav-item>
           </b-navbar-nav>
 
 
@@ -69,7 +69,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    background-color:dimgrey;
+    background-color: #fafafa;
   }
 
   #nav {

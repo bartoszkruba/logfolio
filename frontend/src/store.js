@@ -12,12 +12,14 @@ export default new Vuex.Store({
       contactEmail: "",
       github: "",
       linkedin: "",
+      phoneNumber: "",
       profileDescription: ""
     },
     loggedIn: true
   },
   mutations: {
     setProfile(state, value) {
+      console.log(value);
       state.profile = value;
     },
     setLoggedIn(state, value) {

@@ -26,6 +26,7 @@ public class InsertData implements CommandLineRunner {
       profile.setEmail("bartosz.kruba@gmail.com");
       profile.setGithub("https://github.com/bartoszkruba");
       profile.setLinkedin("https://www.linkedin.com/in/bartosz-kruba-044ba6171/");
+      profile.setPhoneNumber("11122233344");
       profile.setProfileName("Bartosz Kruba");
       profile.setProfilePicture("http://indol.se/wp-content/uploads/2017/04/profile-placeholder.png");
       profile.setPassword("password");

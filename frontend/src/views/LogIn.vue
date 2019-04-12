@@ -1,7 +1,7 @@
 <template>
   <div class="mt-5">
     <aside class="col-sm-4 ml-auto mr-auto">
-      <div class="card">
+      <b-card bg-variant="dark" class="card">
         <article class="card-body">
           <h4 class="card-title mb-4 mt-1">Log in</h4>
           <form>
@@ -23,7 +23,7 @@
             </div> <!-- form-group// -->
           </form>
         </article>
-      </div> <!-- card.// -->
+      </b-card> <!-- card.// -->
     </aside> <!-- col.// -->
   </div>
 </template>

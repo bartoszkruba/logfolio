@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="d-flex flex-column justify-content-between" style="min-height: 100vh">
     <div>
-      <b-navbar toggleable="lg" type="dark" variant="primary">
+      <b-navbar toggleable="lg" type="dark" variant="dark" class="navbar">
         <b-navbar-brand to="/">Logfolio</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
@@ -24,7 +24,7 @@
       </b-navbar>
     </div>
     <router-view/>
-    <div class="text-center center-block footer ">
+    <div class="text-center center-block footer bg-dark">
       <a :href="linkedin"><i id="social-li"
                              class="social fab fa-linkedin m-3"></i></a>
       <a :href="contactEmail"><i id="social-em" class=" social fas fa-envelope-square m-3"></i></a>
@@ -69,6 +69,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+    background-color:dimgrey;
   }
 
   #nav {
@@ -84,16 +85,13 @@
     color: #42b983;
   }
 
-  .footer {
-    background-color: #375a7f;
-    /*border-top: 1px solid #adb5bd;*/
-  }
 
   .social:hover {
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1);
   }
+
 
   .social {
     color: #adb5bd;

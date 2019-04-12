@@ -2,11 +2,13 @@
   <div class="container mt-5">
     <div class="row m-auto">
       <div class="col-4">
-        <b-card bg-variant="light" style="height: 100%">
-          <h5 class="text-left">Profile Picture:</h5>
+        <b-card bg-variant="dark" style="height: 100%"
+                header="Profile Picture:">
+          <!--          <h5 class="text-left">Profile Picture:</h5>-->
           <img :src="profilePicture"
-               class="img-fluid mb-5" alt="profile image">
+               class="img-fluid" alt="profile image">
           <b-form-file
+              class="mt-5"
               placeholder="Choose a file..."
               drop-placeholder="Drop file here..."
               @change="uploadProfilePicture"/>
@@ -14,8 +16,9 @@
       </div>
       <div class="col-8">
         <div>
-          <b-card bg-variant="light">
-            <h5 class="text-left">User Data:</h5>
+          <b-card bg-variant="dark"
+                  header="User Data:">
+            <!--            <h5 class="text-left">User Data:</h5>-->
             <b-form-group
                 label-cols-sm="3"
                 label="LinkedIn:"
@@ -44,8 +47,10 @@
                 label-align-sm="right">
               <b-form-input :value="profileName" @change="updateName"/>
             </b-form-group>
+          </b-card>
 
-            <h5 class="text-left">Profile Description:</h5>
+          <b-card class="mt-2" bg-variant="dark"
+                  header="Profile Description:">
             <b-form-textarea rows="10" style="resize:none;"
                              :value="profileDescription" @change="updateProfileDescription"/>
           </b-card>
@@ -54,7 +59,7 @@
     </div>
     <div class="row mt-4 mr-auto ml-auto mb-4">
       <div class="col-12">
-        <b-card bg-variant="light text-right">
+        <b-card bg-variant="dark text-right">
           <b-button variant="primary" @click="updateProfile">Update Profile</b-button>
         </b-card>
       </div>

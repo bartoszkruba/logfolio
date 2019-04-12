@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5">
+  <div class="mt-5" >
     <div class="jumbotron col-9 m-auto">
       <h1 class="display-3">Hello!</h1>
       <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
@@ -24,9 +24,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  *{
-    color: white;
-  }
+  /**{*/
+  /*  color: white;*/
+  /*}*/
 /*h3 {*/
 /*  margin: 40px 0 0;*/
 /*}*/

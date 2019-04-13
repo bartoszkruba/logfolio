@@ -2,9 +2,9 @@ import Api from './Api'
 
 export default {
   getById(id) {
-    return Api().get(`api/profile/${id}`)
+    return Api().get(`profile/${id}`)
   },
   save(profile) {
-    return Api().post(`api/profile`, profile);
+    return Api().post(`profile`, profile);
   }
 }

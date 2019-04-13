@@ -15,7 +15,7 @@ export default new Vuex.Store({
       phoneNumber: "",
       profileDescription: ""
     },
-    loggedIn: true
+    loggedIn: false
   },
   mutations: {
     setProfile(state, value) {

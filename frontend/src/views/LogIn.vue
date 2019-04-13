@@ -4,14 +4,19 @@
       <b-card bg-variant="dark" class="card">
         <article class="card-body">
           <h4 class="card-title mb-4 mt-1">Log in</h4>
+          <b-alert show variant="danger" v-if="showError">Incorrect Credentials</b-alert>
           <form>
             <div class="form-group">
               <label>Your email</label>
-              <input profileName="" class="form-control" placeholder="Email" type="email">
+              <input class="form-control" placeholder="Email"
+                     type="email" v-model="email"
+                     v-on:keydown.enter="logIn">
             </div> <!-- form-group// -->
             <div class="form-group">
               <label>Your password</label>
-              <input class="form-control" placeholder="******" type="password">
+              <input class="form-control" placeholder="Password"
+                     type="password" v-model="password"
+                     v-on:keydown.enter="logIn">
             </div> <!-- form-group// -->
             <div class="form-group">
               <div class="checkbox">
@@ -29,13 +34,27 @@
 </template>
 
 <script>
+  import authenticationService from "../services/authenticationService";
+
   export default {
     profileName: "LogIn",
+    data() {
+      return {
+        email: '',
+        password: '',
+        showError: false
+      }
+    },
     methods: {
-      logIn() {
-        this.$store.commit('setLoggedIn', true);
-        this.$store.commit('setProfileName', 'Bartosz Kruba');
-        this.$router.push('updateprofile');
+      async logIn() {
+        const response = await authenticationService.login(this.email, this.password);
+        if (response.data === true) {
+          this.showError = false;
+          this.$store.commit("setLoggedIn", true);
+          this.$router.push('/updateprofile');
+        } else {
+          this.showError = true;
+        }
       }
     }
   }
@@ -43,7 +62,7 @@
 
 <style scoped>
 
-  label, h4{
+  label, h4 {
     color: #fff;
   }
 

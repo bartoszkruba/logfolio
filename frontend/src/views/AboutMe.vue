@@ -2,9 +2,22 @@
   <div class="container">
     <div class="row">
       <div class="col-4">
+        <div style="height: 100%">
+          <b-img :src="profilePicture" fluid alt="Profile Image"/>
+        </div>
+      </div>
+      <div class="col-8">
         <b-card bg-variant="dark"
-                header="Contact Me:"
-                :img-src="profilePicture">
+                header="Acout Me"
+                style="height: 100%">
+          <b-card-text>{{profileDescription}}</b-card-text>
+        </b-card>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-4">
+        <b-card bg-variant="dark"
+                header="Contact Me:">
           <b-card-text>
             <div><strong>Email:</strong> {{contactEmail}}</div>
             <div><strong>Phone:</strong> {{phoneNumber}}</div>
@@ -13,12 +26,7 @@
       </div>
       <div class="col-8">
         <b-card bg-variant="dark"
-                header="Acout Me">
-          <b-card-text>{{profileDescription}}</b-card-text>
-        </b-card>
-        <b-card bg-variant="dark"
-                header="Check out my profile"
-                class="mt-2">
+                header="Check out my profile">
           <b-card-text>
             <div>
               <strong>LinkedIn: </strong> <a :href="linkedin">{{linkedin}}</a>

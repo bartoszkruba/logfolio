@@ -1,7 +1,8 @@
-package com.company.logfolio.service;
+package com.company.logfolio.web.service;
 
-import com.company.logfolio.dao.entity.Profile;
-import com.company.logfolio.dao.repository.ProfileRepostiory;
+import com.company.logfolio.data.entity.Profile;
+import com.company.logfolio.data.repository.ProfileRepostiory;
+import com.company.logfolio.web.jsonObjects.JsonProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,9 +25,9 @@ public class ProfileService {
       return (List<Profile>) profileRepostiory.findAll();
    }
 
-   public Profile findProfileById(Long id) {
+   public JsonProfile findProfileById(Long id) {
       var result = profileRepostiory.findById(id);
-      return result.isPresent() ? result.get() : null;
+      return result.isPresent() ? new JsonProfile(result.get()) : null;
    }
 
    public Profile saveProfile(Profile profile) {

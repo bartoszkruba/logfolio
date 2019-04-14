@@ -1,6 +1,10 @@
-package com.company.logfolio.dao.entity;
+package com.company.logfolio.data.entity;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Profile {
@@ -22,6 +26,11 @@ public class Profile {
    private String profileDescription;
    private String email;
    private String password;
+
+   @OneToMany(mappedBy = "profile", cascade = CascadeType.ALL,
+           fetch = FetchType.LAZY)
+   @JsonBackReference
+   private List<Project> projects = new ArrayList<>();
 
    public Profile() {
 
@@ -99,18 +108,11 @@ public class Profile {
       this.phoneNumber = phoneNumber;
    }
 
-   @Override
-   public String toString() {
-      return "Profile{" +
-              "id=" + id +
-              ", profileName='" + profileName + '\'' +
-              ", contactEmail='" + contactEmail + '\'' +
-              ", linkedin='" + linkedin + '\'' +
-              ", github='" + github + '\'' +
-              ", profilePicture='" + profilePicture + '\'' +
-              ", profileDescription='" + profileDescription + '\'' +
-              ", email='" + email + '\'' +
-              ", password='" + password + '\'' +
-              '}';
+   public List<Project> getProjects() {
+      return projects;
+   }
+
+   public void setProjects(List<Project> projects) {
+      this.projects = projects;
    }
 }

@@ -1,7 +1,8 @@
-package com.company.logfolio.controller;
+package com.company.logfolio.web.controller;
 
-import com.company.logfolio.dao.entity.Profile;
-import com.company.logfolio.service.ProfileService;
+import com.company.logfolio.data.entity.Profile;
+import com.company.logfolio.web.jsonObjects.JsonProfile;
+import com.company.logfolio.web.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +28,7 @@ public class ProfileController {
    }
 
    @GetMapping("/{id}")
-   public Profile getProfileById(@PathVariable Long id) {
+   public JsonProfile getProfileById(@PathVariable Long id) {
       System.out.println(id);
       return profileService.findProfileById(id);
    }

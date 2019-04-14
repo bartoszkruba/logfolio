@@ -1,6 +1,6 @@
-package com.company.logfolio.controller;
+package com.company.logfolio.web.controller;
 
-import com.company.logfolio.service.AuthenticationService;
+import com.company.logfolio.web.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

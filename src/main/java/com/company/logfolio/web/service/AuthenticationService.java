@@ -1,7 +1,7 @@
-package com.company.logfolio.service;
+package com.company.logfolio.web.service;
 
-import com.company.logfolio.dao.entity.Profile;
-import com.company.logfolio.dao.repository.ProfileRepostiory;
+import com.company.logfolio.data.entity.Profile;
+import com.company.logfolio.data.repository.ProfileRepostiory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
